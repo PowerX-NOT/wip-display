@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work In Progress</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-color: #282c34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .wip-container {
+            text-align: center;
+            font-size: 2rem;
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .wip-text {
+            display: inline-block;
+            width: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid white;
+            animation: typing 4s steps(30) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        .construction-worker {
+            position: absolute;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background: url('https://img.icons8.com/ios/452/construction-worker.png') no-repeat center center;
+            background-size: contain;
+            animation: moveWorker 10s linear infinite;
+        }
+
+        .worker1 {
+            left: -60px;
+            animation-delay: 0s;
+        }
+
+        .worker2 {
+            left: -100px;
+            animation-delay: 2s;
+        }
+
+        .worker3 {
+            left: -150px;
+            animation-delay: 4s;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveWorker {
+            to {
+                transform: translateX(100vw);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .wip-container {
+                font-size: 1.5rem; /* Smaller font size for mobile */
+                padding: 15px;
+            }
+
+            .wip-text {
+                font-size: 1.2rem;
+            }
+
+            .construction-worker {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .wip-container {
+                font-size: 1.2rem; /* Further reduced font size for small devices */
+                padding: 10px;
+            }
+
+            .wip-text {
+                font-size: 1rem;
+            }
+
+            .construction-worker {
+                width: 35px;
+                height: 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wip-container">
+        <div class="wip-text">This website is work in progress...</div>
+    </div>
+    <div class="construction-worker worker1"></div>
+    <div class="construction-worker worker2"></div>
+    <div class="construction-worker worker3"></div>
+</body>
+</html>
